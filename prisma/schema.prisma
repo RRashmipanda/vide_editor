@@ -18,5 +18,14 @@ model User {
   id       String    @id @default(cuid()) @map("_id")
   name     String?
   email    String    @unique
+  image    String?
+  accounts Account[]
+  role     UserRole  @default(USER)
 
+  myPlaground Playground[]
+  staredPlayground StarMark[]
+  chatMessages ChatMessage[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
