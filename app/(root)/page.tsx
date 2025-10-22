@@ -39,7 +39,7 @@ export default function Home() {
           bg-gradient-to-r from-purple-600 to-blue-500 hover:from-purple-500 hover:to-blue-400 
           tracking-tight leading-[1.2] drop-shadow-[0_0_20px_rgba(0,0,255,0.2)] transition-all duration-300"
         >
-          Vibe Code With Intelligence
+          Build with Intelligence.
         </h1>
 
         {/* Animated tagline */}
@@ -50,8 +50,7 @@ export default function Home() {
 
         {/* Description */}
         <p className="text-gray-700 dark:text-gray-300 max-w-2xl text-center leading-relaxed mt-4">
-          Experience a modern, AI-enhanced code editor that helps you write, debug, and
-          optimize your code faster. Built for creators, by creators.
+          Experience next-generation AI collaboration that writes, refines, and optimizes your code — so you can focus on innovation, not syntax.
         </p>
 
         {/* Button */}

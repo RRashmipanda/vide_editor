@@ -28,7 +28,7 @@ export function Header() {
                 from-purple-400 via-blue-400 to-cyan-400 text-transparent bg-clip-text 
                 tracking-tight"
               >
-                VibeCode AI
+                VideEditor
               </span>
             </Link>
 
