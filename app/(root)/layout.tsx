@@ -5,8 +5,8 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: {
-    template: "VibeCode - Editor ",
-    default: "Code Editor For VibeCoders - VibeCode",
+    template: "VideCode - Editor ",
+    default: "Code Editor For VibeCoders - VideCode",
   },
 };
 export default function HomeLayout({
@@ -17,7 +17,7 @@ export default function HomeLayout({
   return (
     <>
       <Header />
-                  <div
+        <div
         className={cn(
           "absolute inset-0",
           "[background-size:40px_40px]",
