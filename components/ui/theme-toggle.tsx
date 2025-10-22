@@ -17,14 +17,14 @@ const [mounted, setMounted] = useState(false);
   return (
        <button
       onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-      className="fixed top-5 right-18 z-50 p-2 rounded-full bg-gray-100 dark:bg-gray-800 shadow-sm hover:scale-105 transition-transform"
+      className="fixed top-6 right-18 z-50 p-2 rounded-b-md bg-gray-100 dark:bg-gray-800 shadow-sm hover:scale-105 transition-transform"
     >
 
     
       {theme === "light" ? (
-        <Moon className="h-3 w-3 text-black transition-colors" />
+        <Moon className="h-4 w-4 text-black transition-colors" />
       ) : (
-        <Sun className="h-3 w-3 text-yellow-400 transition-colors" />
+        <Sun className="h-4 w-4 text-blue-500 transition-colors" />
       )}
     </button>
   );
