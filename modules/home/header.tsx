@@ -1,38 +1,47 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
 import UserButton from "../auth/components/user-button";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 
 export function Header() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
-    <div className="sticky top-0 left-0 right-0 z-50">
-      <div className="bg-gradient-to-b from-white/90 via-gray-50/80 to-white/90 dark:from-zinc-900/90 dark:via-zinc-800/80 dark:to-zinc-900/90 w-full backdrop-blur-md shadow-[0_2px_20px_-2px_rgba(0,0,0,0.1)] border-b border-[rgba(230,230,230,0.7)] dark:border-[rgba(70,70,70,0.7)]">
-        <div className="max-w-[1200px] mx-auto flex items-center justify-between px-4 py-2.5 rounded-b-[28px] transition-all duration-300 ease-in-out">
-          
-          {/* Logo + Navigation */}
+    <header className="sticky top-0 left-0 right-0 z-50">
+      <div className="bg-gradient-to-b from-white/90 via-gray-50/80 to-white/90 
+        dark:from-zinc-900/90 dark:via-zinc-800/80 dark:to-zinc-900/90 
+        w-full backdrop-blur-md shadow-[0_2px_20px_-2px_rgba(0,0,0,0.1)] 
+        border-b border-[rgba(230,230,230,0.7)] dark:border-[rgba(70,70,70,0.7)] 
+        transition-all duration-300 ease-in-out"
+      >
+        <div className="max-w-[1200px] mx-auto flex items-center justify-between px-4 py-3">
+
+          {/* 🔹 Left Section (Logo + Nav Links) */}
           <div className="flex items-center gap-6">
             <Link href="/" className="flex items-center gap-2">
-              <Image src="/logo.svg" alt="Logo" height={60} width={60} />
-              <span className="hidden sm:block font-extrabold text-lg bg-gradient-to-r from-purple-400 via-blue-400 to-cyan-400 text-transparent bg-clip-text">
-                VideEditor
+              <Image src="/logo.svg" alt="Logo" height={45} width={45} />
+              <span className="hidden sm:block font-extrabold text-lg bg-gradient-to-r 
+                from-purple-400 via-blue-400 to-cyan-400 text-transparent bg-clip-text 
+                tracking-tight"
+              >
+                VibeCode AI
               </span>
             </Link>
 
-            {/* Separator */}
-            <span className="text-zinc-300 dark:text-zinc-500">|</span>
-
-            {/* Desktop Links */}
-            <div className="hidden sm:flex items-center gap-4">
+            {/* Desktop Nav Links */}
+            <nav className="hidden sm:flex items-center gap-5 ml-4">
               <Link
-                href="/docs/components/background-paths"
+                href="/docs"
                 className="text-sm text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
               >
                 Docs
               </Link>
-
               <Link
-                href="https://codesnippetui.pro/templates?utm_source=codesnippetui.com&utm_medium=header"
-                target="_blank"
+                href="/api"
                 className="flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
               >
                 API
@@ -40,34 +49,57 @@ export function Header() {
                   New
                 </span>
               </Link>
-            </div>
+            </nav>
           </div>
 
-          {/* Right-side items */}
+          {/* 🔹 Right Section (Theme + UserButton) */}
           <div className="hidden sm:flex items-center gap-3">
             <ThemeToggle />
             <UserButton />
           </div>
 
-          {/* Mobile navigation */}
-          <div className="flex sm:hidden items-center gap-4">
+          {/* 🔹 Mobile Controls */}
+          <div className="flex sm:hidden items-center gap-3">
+            <ThemeToggle />
+            <button
+              onClick={() => setMenuOpen(!menuOpen)}
+              className="p-2 rounded-md border border-gray-300/50 dark:border-zinc-700/60 hover:bg-gray-100 dark:hover:bg-zinc-800 transition-colors"
+              aria-label="Toggle menu"
+            >
+              {menuOpen ? (
+                <X className="h-5 w-5 text-gray-700 dark:text-gray-200" />
+              ) : (
+                <Menu className="h-5 w-5 text-gray-700 dark:text-gray-200" />
+              )}
+            </button>
+          </div>
+        </div>
+
+        {/* 🔹 Mobile Dropdown Menu */}
+        {menuOpen && (
+          <div className="sm:hidden flex flex-col items-start gap-3 px-6 py-3 border-t border-gray-200 dark:border-zinc-700 bg-white/90 dark:bg-zinc-900/90 backdrop-blur-lg">
             <Link
-              href="/docs/components/action-search-bar"
-              className="text-sm text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
+              href="/docs"
+              className="w-full text-sm text-gray-700 dark:text-gray-300 hover:text-blue-500 transition-colors"
+              onClick={() => setMenuOpen(false)}
             >
               Docs
             </Link>
             <Link
-              href="/pricing"
-              className="text-sm text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
+              href="/api"
+              className="w-full text-sm text-gray-700 dark:text-gray-300 hover:text-blue-500 transition-colors"
+              onClick={() => setMenuOpen(false)}
             >
-              API
+              API <span className="text-xs text-blue-500 ml-1">(New)</span>
             </Link>
-            <ThemeToggle />
-            <UserButton />
+
+            {/* Divider */}
+            <div className="pt-2 border-t border-gray-200 dark:border-zinc-700 w-full flex justify-end">
+              <UserButton />
+            </div>
           </div>
-        </div>
+        )}
       </div>
-    </div>
+    </header>
   );
 }

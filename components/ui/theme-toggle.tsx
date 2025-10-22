@@ -17,7 +17,7 @@ const [mounted, setMounted] = useState(false);
   return (
        <button
       onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-      className="fixed top-6 right-18 z-50 p-2 rounded-b-md bg-gray-100 dark:bg-gray-800 shadow-sm hover:scale-105 transition-transform"
+      className="fixed top-5 right-18 z-50 p-2 rounded-b-md bg-gray-100 dark:bg-gray-800 shadow-sm hover:scale-105 transition-transform"
     >
 
     
