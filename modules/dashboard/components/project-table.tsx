@@ -103,6 +103,7 @@ export default function ProjectTable({
     setDeleteDialogOpen(true);
   };
 
+
   const handleUpdateProject = async () => {
     if (!selectedProject || !onUpdateProject) return;
 
@@ -120,8 +121,9 @@ export default function ProjectTable({
     }
   };
 
+
   const handleMarkasFavorite = async (project: Project) => {
-    //    Write your logic here
+    //    Write  logic here
   };
 
   const handleDeleteProject = async () => {
