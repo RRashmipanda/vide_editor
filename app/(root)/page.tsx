@@ -55,15 +55,23 @@ export default function Home() {
 
         {/* Button */}
         <Link href="/dashboard">
-          <Button
-            variant="default"
-            size="lg"
-            className="mt-6 group flex items-center gap-2 text-white bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 transition-all duration-300 shadow-md hover:shadow-xl"
-          >
-            Get Started
-            <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-200" />
-          </Button>
-        </Link>
+  <Button
+    variant="default"
+    size="lg"
+    className="mt-6 group flex items-center gap-2 text-white 
+      bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 
+      transition-all duration-300 shadow-md 
+      hover:shadow-lg hover:scale-105 hover:from-blue-600 hover:via-indigo-600 hover:to-purple-700
+      active:scale-95 focus:ring-2 focus:ring-indigo-400 focus:ring-offset-2 cursor-pointer"
+  >
+    Get Started
+    <ArrowUpRight
+      className="w-4 h-4 transform transition-transform duration-200 
+        group-hover:translate-x-1 group-hover:-translate-y-1"
+    />
+  </Button>
+</Link>
+
       </div>
     </div>
   );
