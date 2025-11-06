@@ -552,12 +552,8 @@
 // };
 
 // export default MainPlaygroundPage;
-import React from 'react'
+"use client";
 
-const MainPlaygroundPage = () => {
-  return (
-    <div>page</div>
-  )
+export default function PlaygroundPage({ params }: { params: { id: string } }) {
+  return <div>Playground ID: {params.id}</div>;
 }
-
-export default MainPlaygroundPage
