@@ -9,7 +9,7 @@ import React from "react";
 const Page = async () => {
   const playgrounds = await getAllPlaygroundForUser();
 
-  // ✅ Normalize data so it always fits the Project type
+  //  Normalize data so it always fits the Project type
   const sanitizedProjects: Project[] =
     playgrounds?.map((p) => ({
       id: p.id,
