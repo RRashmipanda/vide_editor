@@ -251,6 +251,7 @@ export async function saveTemplateStructureToJson(
   }
 }
 
+
 export async function readTemplateStructureFromJson(filePath: string): Promise<TemplateFolder> {
   try {
     const data = await fs.promises.readFile(filePath, 'utf8');
