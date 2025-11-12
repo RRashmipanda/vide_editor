@@ -42,7 +42,8 @@ export const getEditorLanguage = (fileExtension: string): string => {
     bash: "shell",
     sql: "sql",
     
-    // Config files
+
+    //Config files
     toml: "ini",
     ini: "ini",
     conf: "ini",
