@@ -263,6 +263,7 @@ export const configureMonaco = (monaco: Monaco) => {
   });
 };
 
+
 export const defaultEditorOptions = {
   // Font settings
   fontSize: 14,
