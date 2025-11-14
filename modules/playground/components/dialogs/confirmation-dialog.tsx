@@ -31,6 +31,7 @@ export function ConfirmationDialog({
   setIsOpen,
 }: ConfirmationDialogProps) {
   return (
+    
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogContent>
         <DialogHeader>
