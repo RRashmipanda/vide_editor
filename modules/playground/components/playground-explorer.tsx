@@ -244,7 +244,7 @@ function TemplateNode({
   onRenameFile,
   onRenameFolder,
 }: TemplateNodeProps) {
-  const isValidItem = item && typeof item === "object";
+  const isValidItem  = item && typeof item === "object";
   const isFolder = isValidItem && "folderName" in item;
   const [isNewFileDialogOpen, setIsNewFileDialogOpen] = React.useState(false);
   const [isNewFolderDialogOpen, setIsNewFolderDialogOpen] =
