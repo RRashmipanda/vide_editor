@@ -49,6 +49,7 @@ export function DeleteDialog({
               "bg-destructive text-destructive-foreground hover:bg-destructive/90"
             )}
           >
+            
             {confirmLabel}
           </AlertDialogAction>
         </AlertDialogFooter>
