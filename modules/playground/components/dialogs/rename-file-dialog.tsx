@@ -22,6 +22,7 @@ interface RenameFileDialogProps {
   currentExtension: string;
 }
 
+
 function RenameFileDialog({
   isOpen,
   onClose,
@@ -32,6 +33,7 @@ function RenameFileDialog({
   const [filename, setFilename] = React.useState(currentFilename);
   const [extension, setExtension] = React.useState(currentExtension);
 
+
   React.useEffect(() => {
     if (isOpen) {
       setFilename(currentFilename);
@@ -39,6 +41,7 @@ function RenameFileDialog({
     }
   }, [isOpen, currentFilename, currentExtension]);
 
+  
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (filename.trim()) {
