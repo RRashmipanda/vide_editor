@@ -53,6 +53,7 @@ interface NewFolderDialogProps {
                 />
               </div>
             </div>
+            
             <DialogFooter>
               <Button type="button" variant="outline" onClick={onClose}>
                 Cancel
