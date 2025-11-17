@@ -47,6 +47,7 @@ interface FileExplorerState {
     saveTemplateData: (data: TemplateFolder) => Promise<void>
   ) => Promise<void>;
 
+  
   handleDeleteFile: (
     file: TemplateFile, 
     parentPath: string, 
